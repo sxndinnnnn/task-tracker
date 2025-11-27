@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="card">
+            <header>
+                <h1>Task Tracker</h1>
+                <button id="theme-toggle" class="toggle-btn">🌙 Dark Mode</button>
+            </header>
+
+            <div class="stats-container">
+                <div class="stats-text">
+                    <span>Daily Progress</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="What needs to be done today?">
+                <button id="add-btn">Add Task</button>
+            </div>
+
+            <ul id="task-list" class="task-list">
+                </ul>
+            
+            <p id="empty-msg" class="empty-msg">No tasks yet. Let's get productive!</p>
+
+            <button id="clear-btn" class="clear-btn hidden">Clear All Tasks</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

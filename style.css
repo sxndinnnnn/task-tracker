@@ -1,0 +1,76 @@
+:root {
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-secondary: #6b7280;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --danger-color: #ef4444;
+    --border-color: #e5e7eb;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #111827;
+    --card-bg: #1f2937;
+    --text-main: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
+body { background-color: var(--bg-color); height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+.card { background: var(--card-bg); width: 100%; max-width: 450px; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow); margin: 20px; }
+
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+header h1 { color: var(--text-main); font-size: 1.5rem; font-weight: 800; }
+.toggle-btn { background: transparent; border: 2px solid var(--border-color); color: var(--text-main); padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+.toggle-btn:hover { border-color: var(--primary-color); }
+
+.stats-container { margin-bottom: 2rem; }
+.stats-text { display: flex; justify-content: space-between; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.progress-track { background: var(--border-color); height: 10px; border-radius: 10px; overflow: hidden; }
+.progress-fill { background: var(--primary-color); height: 100%; width: 0%; transition: width 0.4s ease-in-out; }
+
+.input-group { display: flex; gap: 10px; margin-bottom: 1.5rem; }
+input { flex: 1; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; background: var(--card-bg); color: var(--text-main); outline: none; }
+input:focus { border-color: var(--primary-color); }
+#add-btn { background: var(--primary-color); color: white; border: none; padding: 0 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+#add-btn:hover { background: var(--primary-hover); }
+
+.task-list { list-style: none; }
+.task-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border-color); animation: fadeIn 0.3s ease; }
+.task-content { display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1; }
+.custom-checkbox { width: 20px; height: 20px; border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; }
+.task-text { color: var(--text-main); font-weight: 500; }
+.task-item.completed .custom-checkbox { background: var(--primary-color); }
+.task-item.completed .task-text { text-decoration: line-through; color: var(--text-secondary); }
+.delete-btn { background: none; border: none; color: var(--text-secondary); font-size: 1.2rem; cursor: pointer; padding: 5px; }
+.delete-btn:hover { color: var(--danger-color); }
+
+.empty-msg { text-align: center; color: var(--text-secondary); margin-top: 20px; font-size: 0.9rem; }
+
+/* NEW: Clear Button Styles */
+.clear-btn {
+    width: 100%;
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid var(--danger-color);
+    color: var(--danger-color);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.clear-btn:hover {
+    background: var(--danger-color);
+    color: white;
+}
+
+.hidden { display: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
